@@ -4,7 +4,6 @@ class Zsv < Formula
   url 'https://github.com/liquidaty/zsv/releases/download/v0.0.4-alpha/zsv-0.0.4-alpha-amd64-macosx-clang.tar.gz'
   head 'https://github.com/liquidaty/zsv.git', branch: 'main'
   license 'MIT'
-  version 'v0.0.4-alpha'
   sha256 '28fc51883467008152621b13c02775e808fd623c18a1663228d6daf95a646154'
 
   def install
