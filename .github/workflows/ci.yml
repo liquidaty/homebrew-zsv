@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md']
+  pull_request:
+    branches: [main]
+    paths-ignore: ['**.md']
+
+jobs:
+  ci:
+    runs-on: [macos-12]
+
+    steps:
+      - name: Install and check version
+        run: |
+          brew tap liquidaty/zsv
+          brew install zsv
+          echo "zsv version: $(zsv version)"
