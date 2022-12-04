@@ -10,11 +10,19 @@ on:
 
 jobs:
   ci:
-    runs-on: [macos-12]
+    runs-on: macos-latest
 
     steps:
-      - name: Install and check version
+      - name: Install
         run: |
           brew tap liquidaty/zsv
           brew install zsv
-          echo "zsv version: $(zsv version)"
+      
+      - name: Check installed version
+        run: |
+          zsv version
+
+      - name: Uninstall
+        run: |
+          brew uninstall zsv
+          zsv version || true
