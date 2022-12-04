@@ -11,6 +11,6 @@ class Zsv < Formula
   end
 
   test do
-    assert_match 'zsv version 8d56e76', shell_output("#{bin}/zsv version", 2)
+    assert_match /zsv version/, shell_output("#{bin}/zsv version", 2)
   end
 end

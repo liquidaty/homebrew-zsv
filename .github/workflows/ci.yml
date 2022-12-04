@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md']
+  pull_request:
+    branches: [main]
+    paths-ignore: ['**.md']
+
+jobs:
+  ci:
+    runs-on: macos-latest
+
+    steps:
+      - name: Tap and install
+        run: |
+          brew tap liquidaty/zsv
+          brew install zsv
+      
+      - name: Check installed version
+        run: |
+          zsv version
+
+      - name: Uninstall and untap
+        run: |
+          brew uninstall zsv
+          brew untap liquidaty/zsv
+          zsv version || true
