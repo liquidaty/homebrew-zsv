@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Install
+      - name: Tap and install
         run: |
           brew tap liquidaty/zsv
           brew install zsv
@@ -22,7 +22,8 @@ jobs:
         run: |
           zsv version
 
-      - name: Uninstall
+      - name: Uninstall and untap
         run: |
           brew uninstall zsv
+          brew untap liquidaty/zsv
           zsv version || true
