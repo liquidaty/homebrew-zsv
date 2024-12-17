@@ -3,7 +3,6 @@ class Zsv < Formula
   homepage 'https://github.com/liquidaty/zsv'
   head 'https://github.com/liquidaty/zsv.git', branch: 'main'
   license 'MIT'
-  bottle :unneeded
 
   if OS.mac?
     if Hardware::CPU.intel?
