@@ -13,11 +13,6 @@ class Zsv < Formula
       url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-arm64-macosx-gcc.zip'
       sha256 '4b28dbc5bf58e432aa8327bfcd20101c776d1b032eb928f6c0d9d985a6821b02'
     end
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-linux-gcc.zip'
-      sha256 '9e2143b85ef2d2f9dd017ea7791fb563d3f9feb4fc4b79f84754daa0fe814a15'
-    end
   end
 
   def install
