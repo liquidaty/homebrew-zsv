@@ -10,20 +10,19 @@ on:
 
 jobs:
   ci:
-    runs-on: macos-12
+    runs-on: macos-13
 
     steps:
-      - name: Tap and install
-        run: |
-          brew tap liquidaty/zsv
-          brew install zsv
-      
-      - name: Check installed version
-        run: |
-          zsv version
+    - name: Tap and install
+      run: |
+        brew tap liquidaty/zsv
+        brew install zsv
+    
+    - name: Check installed version
+      run: zsv version
 
-      - name: Uninstall and untap
-        run: |
-          brew uninstall zsv
-          brew untap liquidaty/zsv
-          zsv version || true
+    - name: Uninstall and untap
+      run: |
+        brew uninstall zsv
+        brew untap liquidaty/zsv
+        zsv version || true

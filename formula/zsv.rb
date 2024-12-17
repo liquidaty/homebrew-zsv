@@ -1,10 +1,23 @@
 class Zsv < Formula
   desc "zsv+lib: world's fastest (simd) CSV parser, with an extensible CLI"
   homepage 'https://github.com/liquidaty/zsv'
-  url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-macosx-gcc.tar.gz'
   head 'https://github.com/liquidaty/zsv.git', branch: 'main'
   license 'MIT'
-  sha256 'c69ab5cb9c17f234c5936af60469ce83e0be01c1c229bd7255776aabc2d17568'
+
+  if OS.mac?
+    if Hardware::CPU.intel?
+      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-macosx-gcc.zip'
+      sha256 '3575ae51d6009f8ffb3a47fd371b8c3faf8fac1647b005cc96bebb09f27ad926'
+    elsif Hardware::CPU.arm?
+      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-arm64-macosx-gcc.zip'
+      sha256 '4b28dbc5bf58e432aa8327bfcd20101c776d1b032eb928f6c0d9d985a6821b02'
+    end
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-linux-gcc.zip'
+      sha256 '9e2143b85ef2d2f9dd017ea7791fb563d3f9feb4fc4b79f84754daa0fe814a15'
+    end
+  end
 
   def install
     bin.install 'bin/zsv'
