@@ -4,13 +4,19 @@ class Zsv < Formula
   head 'https://github.com/liquidaty/zsv.git', branch: 'main'
   license 'MIT'
 
+  AMD64_URL = 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-macosx-gcc.zip'
+  AMD64_HASH = '3575ae51d6009f8ffb3a47fd371b8c3faf8fac1647b005cc96bebb09f27ad926'
+
+  ARM64_URL = 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-arm64-macosx-gcc.zip'
+  ARM64_HASH = '4b28dbc5bf58e432aa8327bfcd20101c776d1b032eb928f6c0d9d985a6821b02'
+
   if OS.mac?
     if Hardware::CPU.intel?
-      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-amd64-macosx-gcc.zip'
-      sha256 '3575ae51d6009f8ffb3a47fd371b8c3faf8fac1647b005cc96bebb09f27ad926'
+      url "#{AMD64_URL}"
+      sha256 "#{AMD64_HASH}"
     elsif Hardware::CPU.arm?
-      url 'https://github.com/liquidaty/zsv/releases/download/v0.4.1-alpha/zsv-0.4.1-alpha-arm64-macosx-gcc.zip'
-      sha256 '4b28dbc5bf58e432aa8327bfcd20101c776d1b032eb928f6c0d9d985a6821b02'
+      url "#{ARM64_URL}"
+      sha256 "#{ARM64_HASH}"
     end
   end
 
