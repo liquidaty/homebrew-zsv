@@ -10,7 +10,7 @@ on:
 
 jobs:
   ci:
-    runs-on: macos-13
+    runs-on: [macos-13, macos-14]
 
     steps:
     - name: Tap and install
