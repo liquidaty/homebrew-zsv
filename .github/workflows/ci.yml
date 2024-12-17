@@ -10,7 +10,12 @@ on:
 
 jobs:
   ci:
-    runs-on: [macos-13, macos-14]
+    strategy:
+      matrix:
+        os: [macos-13, macos-14]
+
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
 
     steps:
     - name: Tap and install
