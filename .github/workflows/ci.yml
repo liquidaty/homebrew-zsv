@@ -12,7 +12,7 @@ jobs:
   ci:
     strategy:
       matrix:
-        os: [macos-13, macos-14]
+        os: [macos-15, macos-15-intel]
 
     runs-on: ${{ matrix.os }}
     timeout-minutes: 5
