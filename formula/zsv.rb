@@ -6,11 +6,11 @@ class Zsv < Formula
   license "MIT"
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
-  AMD64_URL = 'https://github.com/liquidaty/zsv/releases/download/v1.1.0/zsv-1.1.0-amd64-macosx-gcc.tar.gz'
-  AMD64_HASH = '19634c54175c102460abe42c504adf553ce8f25c21be93e6c24c425384cbe2fd'
+  AMD64_URL = 'https://github.com/liquidaty/zsv/releases/download/v1.2.0/zsv-1.2.0-amd64-macosx-gcc.tar.gz'
+  AMD64_HASH = '21d0c6d0bffe63053077b163cef6f8e21898cdb3e266c5af5d04e3dfea996b4b'
 
-  ARM64_URL = 'https://github.com/liquidaty/zsv/releases/download/v1.1.0/zsv-1.1.0-arm64-macosx-gcc.tar.gz'
-  ARM64_HASH = '7ab00ede80cfe747b7b9f4c2c3b2f29fafab746eb8269b22a862f1c81bfaae4c'
+  ARM64_URL = 'https://github.com/liquidaty/zsv/releases/download/v1.2.0/zsv-1.2.0-arm64-macosx-gcc.tar.gz'
+  ARM64_HASH = '30b371f0a24c476bf70bc4af69e43372706c76ec8946a2aa98e586cafef8c663'
 
   on_macos do
     on_intel do
